@@ -1,0 +1,15 @@
+To solve this issue, ensure that the parent container has a defined width and that the units used within the `calc()` function are consistent. For example, if you want to use percentages and pixels, you need to ensure that the parent element has a defined width, either explicitly or implicitly. It is also recommended to test across different browsers to ensure that the `calc()` function works as expected.
+
+Here's an example of how to fix the issue:
+
+```css
+#container {
+  width: 500px; /* Ensure parent has a defined width */
+}
+
+#myElement {
+  width: calc(50% - 10px);
+}
+```
+
+In this solution, we've added `width: 500px;` to the container element, providing a defined width for the calculation to work correctly.  Also, ensure that you're using consistent units throughout the calculation (e.g., all pixels or all percentages).  Avoid mixing them indiscriminately in the same expression.
